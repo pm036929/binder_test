@@ -12,6 +12,7 @@ RUN pip install numpy \
  && pip install casadi\
  && pip install scipy\
  && pip install matplotlib\
+ && pip install pandas\
  && chown -R ${NB_UID} ${HOME}
 
 USER ${NB_USER}
