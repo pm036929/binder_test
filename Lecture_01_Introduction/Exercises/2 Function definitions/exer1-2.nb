@@ -1,0 +1,444 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 6.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[     16417,        436]
+NotebookOptionsPosition[     12588,        368]
+NotebookOutlinePosition[     12952,        384]
+CellTagsIndexPosition[     12909,        381]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Chapter 1, exercise 2", "Title",
+ CellChangeTimes->{{3.791079792265003*^9, 
+  3.7910797996948547`*^9}},ExpressionUUID->"51ebfbab-9d85-4e83-8f89-\
+75e99bce9bbc"],
+
+Cell[CellGroupData[{
+
+Cell["Problems", "Section",
+ CellChangeTimes->{
+  3.79131067808365*^9},ExpressionUUID->"2f51dbd2-096b-47f0-a9cb-affbfd49a42d"],
+
+Cell["\<\
+A: Write a procedure, called ADDXY, that takes as input two scalars, x and y, \
+and produces x+y as output. Similarly write a procedure MXY that takes x and \
+y and produces x/ y, and a procedure DXY that takes x and y and produces x/y. 
+
+B: Next write a program which reads two scalars, x and y, applies ADDXY (MXY, \
+DXY), x and y, and prints the answers in a readable fashion. For example, the \
+printout should consist of statements like ``THE SUM OF---AND---IS---,'' \
+``THE PRODUCT OF --- ...,'' and so on.\
+\>", "Text",
+ CellChangeTimes->{{3.790434018481062*^9, 3.790434043703124*^9}, {
+  3.791079903035177*^9, 3.791079904011612*^9}, {3.7910799733731127`*^9, 
+  3.791080038534028*^9}, {3.791310682578795*^9, 
+  3.7913106884026747`*^9}},ExpressionUUID->"36d6b0e3-6e78-4827-a13d-\
+f567546c1447"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Solutions in Mathematica", "Section",ExpressionUUID->"a8684fdb-fe20-4467-9d5d-89b1022388b5"],
+
+Cell[CellGroupData[{
+
+Cell["Part A: Simple function definition", "Subsection",
+ CellChangeTimes->{{3.791080079450613*^9, 3.791080086925712*^9}, {
+  3.791310697178203*^9, 
+  3.791310699042035*^9}},ExpressionUUID->"21070a5b-610d-40ec-a3d4-\
+6ba1af571fc9"],
+
+Cell["\<\
+Mathematica has many ways to define procedures. We first display the simple \
+way to define a function.\
+\>", "Text",
+ CellChangeTimes->{{3.790434093012527*^9, 3.790434137906961*^9}, {
+  3.7904343556025877`*^9, 
+  3.790434370433591*^9}},ExpressionUUID->"33ee6197-00d0-431f-9ce9-\
+0cbac98c404b"],
+
+Cell["\<\
+Define the ADDXY function which takes two arguments and computes their sum.\
+\>", "Text",ExpressionUUID->"f26d0180-c825-4405-8cd4-c99edea7bd98"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ADDXY", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{"x", "+", "y"}]}]], "Input",
+ CellChangeTimes->{
+  3.7877942824610558`*^9},ExpressionUUID->"6bfb7ef4-786b-40bb-bd36-\
+40ad8062125d"],
+
+Cell["\<\
+The := symbol says that the LHS will always be interpreted as the RHS.\
+\>", "Text",
+ CellChangeTimes->{{3.790434469005934*^9, 
+  3.790434472077785*^9}},ExpressionUUID->"1b9b99e9-1a2f-44f2-abd7-\
+2039c846bbb8"],
+
+Cell["\<\
+Define the MXY function which takes two arguments and computes their product.\
+\>", "Text",
+ CellChangeTimes->{{3.790434212775833*^9, 
+  3.790434219887645*^9}},ExpressionUUID->"3ea7c6ee-96c5-4b11-bf58-\
+656fdd96b13e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MXY", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{"x", " ", "y"}]}]], "Input",
+ CellChangeTimes->{
+  3.7877942824610558`*^9, {3.79043418297745*^9, 
+   3.790434188296994*^9}},ExpressionUUID->"b50560b0-1e37-4f7c-9d75-\
+2f5d4eee1a73"],
+
+Cell["\<\
+Define the DXY function which takes two arguments and computes their ratio.\
+\>", "Text",
+ CellChangeTimes->{{3.790434207935935*^9, 
+  3.790434225095415*^9}},ExpressionUUID->"fd3f31c8-3d25-43cc-889c-\
+266cb6a747ea"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DXY", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], ":=", 
+  RowBox[{"x", "/", "y"}]}]], "Input",
+ CellChangeTimes->{
+  3.7877942824610558`*^9, {3.790434193912956*^9, 
+   3.7904341975684977`*^9}},ExpressionUUID->"4cff6bab-a6ed-4ab8-801f-\
+907c7983e135"],
+
+Cell["Check the function with examples.", "Text",
+ CellChangeTimes->{{3.7877943384356537`*^9, 
+  3.7877943422025948`*^9}},ExpressionUUID->"a2c6b932-79c0-495a-8087-\
+cfc246c5fa6b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"ADDXY", "[", 
+    RowBox[{"2", ",", "3"}], "]"}], ",", 
+   RowBox[{"MXY", "[", 
+    RowBox[{"2", ",", "3"}], "]"}], ",", 
+   RowBox[{"DXY", "[", 
+    RowBox[{"2", ",", "3"}], "]"}], ",", 
+   RowBox[{"DXY", "[", 
+    RowBox[{"2.", ",", "3"}], "]"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.790434277317629*^9, 
+  3.790434318179943*^9}},ExpressionUUID->"1cb2d8af-5614-4e10-8237-\
+d989e8bb8532"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "6", ",", 
+   FractionBox["2", "3"], ",", "0.6666666666666666`"}], "}"}]], "Output",
+ CellChangeTimes->{{3.790434318921152*^9, 3.790434325979919*^9}, 
+   3.791311352168166*^9},ExpressionUUID->"f2f1da31-a721-4fd0-93c8-\
+764a0f18da5f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Part B: Module definition", "Subsection",
+ CellChangeTimes->{{3.791080079450613*^9, 3.7910801009844627`*^9}, {
+  3.791310702433506*^9, 
+  3.791310704393704*^9}},ExpressionUUID->"09015793-ce0e-4a0b-8f20-\
+b462a9b7fce8"],
+
+Cell["\<\
+The task here is to create a function (or procedure, or ...) which will take \
+as arguments another function and its arguments. This ability is a key \
+feature of modern languages.
+We use the Module construction to define a function which outputs a message. \
+Module in Mathematica is used to create a procedure. It is more flexible than \
+the simple function definition in that it can use arbitrarily complex code. 
+
+Also, any text inside of (* ... *) is a comment. I strongly encourage \
+comments inside code. Good code must have enough comments so that others can \
+understand what the code is doing. When writing code you should ask \
+\[OpenCurlyDoubleQuote]Will I understand this code if the next time I \
+(actually, my future self) see it is next year?\[CloseCurlyDoubleQuote] You \
+should also ask \[OpenCurlyDoubleQuote]Can someone else who knows the \
+language I am using understand my code?\[CloseCurlyDoubleQuote] 
+
+I am trying to write Mathematica code that readers can understand even if \
+they do not know Mathematica. This is a much higher standard. Please contact \
+me if you have questions.\
+\>", "Text",
+ CellChangeTimes->{{3.787794347395226*^9, 3.787794352866584*^9}, {
+  3.790388722482448*^9, 3.790388858713091*^9}, {3.7904343941845818`*^9, 
+  3.790434502300399*^9}, {3.79131074340064*^9, 3.791310993453087*^9}, {
+  3.791311083258214*^9, 
+  3.791311192788855*^9}},ExpressionUUID->"3d726fcd-9a6e-4e32-90bc-\
+5d5d8f6f6573"],
+
+Cell["We first need to clear the earlier definitions.", "Text",
+ CellChangeTimes->{{3.7904345284426928`*^9, 
+  3.790434543474431*^9}},ExpressionUUID->"dcf9e75b-bfc3-48f0-8c48-\
+1d8ed940e892"],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", 
+  RowBox[{"ADDXY", ",", "MXY", ",", "DXY"}], "]"}]], "Input",
+ CellChangeTimes->{{3.790434545034988*^9, 
+  3.790434557194358*^9}},ExpressionUUID->"317bf7ce-8cd5-4661-843e-\
+a749480eb7d4"],
+
+Cell["Define ADDXY.", "Text",
+ CellChangeTimes->{{3.791080129642499*^9, 
+  3.791080139706036*^9}},ExpressionUUID->"7ef44141-3d45-48b5-bb53-\
+b879a7934146"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ADDXY", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], " ", ":=", " ", "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "List", " ", "the", " ", "variables", " ", "local", " ", "to", " ", 
+      "the", " ", 
+      RowBox[{"Module", ".", " ", "In"}], " ", "this", " ", "case"}], ",", 
+     " ", 
+     RowBox[{
+     "the", " ", "only", " ", "local", " ", "variable", " ", "is", " ", 
+      RowBox[{"sum", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", "sum", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{"Add", " ", "the", " ", "two", " ", "inputs"}], " ", "*)"}], 
+    "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"sum", "=", 
+      RowBox[{"x", "+", "y"}]}], ";", " ", "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+      "Print", " ", "the", " ", "result", " ", "along", " ", "with", " ", "a",
+        " ", "description"}], " ", "*)"}], "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", 
+      RowBox[{"\"\<The sum of x and y is \>\"", ",", " ", "sum"}], "]"}]}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.7903885464264936`*^9, 3.790388553316689*^9}, {
+  3.790388600731902*^9, 3.79038870141089*^9}, {3.791311028636544*^9, 
+  3.791311040859559*^9}},ExpressionUUID->"cdce299b-fe6d-4a46-93d9-\
+72845f99af14"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ADDXY", "[", 
+  RowBox[{"2", ",", "3"}], "]"}]], "Input",ExpressionUUID->"fd624a1d-d02b-\
+4838-8ed0-2e04844f865f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The sum of x and y is \"\>", "\[InvisibleSpace]", "5"}],
+  SequenceForm["The sum of x and y is ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.790434563228674*^9, 
+  3.7913113522141848`*^9},ExpressionUUID->"78949c00-f3ee-454c-a00d-\
+b3938a2a7325"]
+}, Open  ]],
+
+Cell["We repeat this for multiplication and division.", "Text",ExpressionUUID->"ad6ec5a4-5b1a-41a1-a288-0cf04a9453e0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MXY", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], " ", ":=", " ", "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", "product", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"product", "=", 
+      RowBox[{"x", "*", "y"}]}], ";", " ", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", 
+      RowBox[{"\"\<The product of x and y is \>\"", ",", " ", "product"}], 
+      "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.790388559338848*^9, 
+  3.7903885688378687`*^9}},ExpressionUUID->"90e73974-9b66-4164-b1f2-\
+19cd33ca7644"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MXY", "[", 
+  RowBox[{"2", ",", "3"}], "]"}]], "Input",ExpressionUUID->"e04485b3-c961-\
+4d5a-b801-e055c9b128f5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The product of x and y is \"\>", "\[InvisibleSpace]", "6"}],
+  SequenceForm["The product of x and y is ", 6],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.79043456604397*^9, 
+  3.791311352254992*^9},ExpressionUUID->"9abe4e57-8737-413d-9dd8-\
+110ece05f5f6"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"DXY", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], " ", ":=", " ", "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", "ratio", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"ratio", "=", 
+      RowBox[{"x", "/", "y"}]}], ";", " ", "\[IndentingNewLine]", 
+     RowBox[{"Print", "[", 
+      RowBox[{"\"\<x divided by y is \>\"", ",", " ", "ratio"}], "]"}]}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.790388573267901*^9, 
+  3.790388581906651*^9}},ExpressionUUID->"6e26aac1-b76e-49f0-8c50-\
+26a4474d334e"],
+
+Cell["\<\
+Our first division example is applied to two integers, which are infinite \
+precision.\
+\>", "Text",ExpressionUUID->"9b930ae0-b07d-4e7f-937b-a007e2a1e713"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DXY", "[", 
+  RowBox[{"2", ",", "3"}], "]"}]], "Input",ExpressionUUID->"de0fa2df-71ae-\
+4b8e-ad12-9f7047c816a0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"x divided by y is \"\>", "\[InvisibleSpace]", 
+   FractionBox["2", "3"]}],
+  SequenceForm["x divided by y is ", 
+   Rational[2, 3]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.790434569975493*^9, 
+  3.791311352296947*^9},ExpressionUUID->"d5f0798d-67bd-4761-9a57-\
+508252ef289f"]
+}, Open  ]],
+
+Cell["\<\
+The answer is the fraction 2/3. We repeat this by applying DXY to real \
+numbers 2. and 3. where now the decimal point indicates that we are using \
+finite precision arithmetic.\
+\>", "Text",
+ CellChangeTimes->{{3.787794565704167*^9, 
+  3.787794574414802*^9}},ExpressionUUID->"d39f9358-c1d7-41a9-b2a2-\
+ced3682b41df"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DXY", "[", 
+  RowBox[{"2.", ",", "3."}], "]"}]], "Input",ExpressionUUID->"b704d371-b18f-\
+4737-8910-b904545796c2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"x divided by y is \"\>", "\[InvisibleSpace]", 
+   "0.6666666666666666`"}],
+  SequenceForm["x divided by y is ", 0.6666666666666666],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.790434572804446*^9, 
+  3.7913113523321867`*^9},ExpressionUUID->"aaf1604b-266c-4c2b-b242-\
+e18a4a71a0e4"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1022, 957},
+WindowMargins->{{68, Automatic}, {Automatic, 0}},
+CellLabelAutoDelete->True,
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 166, 3, 98, "Title",ExpressionUUID->"51ebfbab-9d85-4e83-8f89-75e99bce9bbc"],
+Cell[CellGroupData[{
+Cell[758, 29, 126, 2, 67, "Section",ExpressionUUID->"2f51dbd2-096b-47f0-a9cb-affbfd49a42d"],
+Cell[887, 33, 810, 14, 127, "Text",ExpressionUUID->"36d6b0e3-6e78-4827-a13d-f567546c1447"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1734, 52, 98, 0, 67, "Section",ExpressionUUID->"a8684fdb-fe20-4467-9d5d-89b1022388b5"],
+Cell[CellGroupData[{
+Cell[1857, 56, 231, 4, 54, "Subsection",ExpressionUUID->"21070a5b-610d-40ec-a3d4-6ba1af571fc9"],
+Cell[2091, 62, 304, 7, 35, "Text",ExpressionUUID->"33ee6197-00d0-431f-9ce9-0cbac98c404b"],
+Cell[2398, 71, 154, 2, 35, "Text",ExpressionUUID->"f26d0180-c825-4405-8cd4-c99edea7bd98"],
+Cell[2555, 75, 235, 7, 30, "Input",ExpressionUUID->"6bfb7ef4-786b-40bb-bd36-40ad8062125d"],
+Cell[2793, 84, 220, 5, 35, "Text",ExpressionUUID->"1b9b99e9-1a2f-44f2-abd7-2039c846bbb8"],
+Cell[3016, 91, 227, 5, 35, "Text",ExpressionUUID->"3ea7c6ee-96c5-4b11-bf58-656fdd96b13e"],
+Cell[3246, 98, 282, 8, 30, "Input",ExpressionUUID->"b50560b0-1e37-4f7c-9d75-2f5d4eee1a73"],
+Cell[3531, 108, 225, 5, 35, "Text",ExpressionUUID->"fd3f31c8-3d25-43cc-889c-266cb6a747ea"],
+Cell[3759, 115, 285, 8, 30, "Input",ExpressionUUID->"4cff6bab-a6ed-4ab8-801f-907c7983e135"],
+Cell[4047, 125, 179, 3, 35, "Text",ExpressionUUID->"a2c6b932-79c0-495a-8087-cfc246c5fa6b"],
+Cell[CellGroupData[{
+Cell[4251, 132, 445, 13, 30, "Input",ExpressionUUID->"1cb2d8af-5614-4e10-8237-d989e8bb8532"],
+Cell[4699, 147, 282, 6, 51, "Output",ExpressionUUID->"f2f1da31-a721-4fd0-93c8-764a0f18da5f"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5030, 159, 224, 4, 54, "Subsection",ExpressionUUID->"09015793-ce0e-4a0b-8f20-b462a9b7fce8"],
+Cell[5257, 165, 1451, 25, 265, "Text",ExpressionUUID->"3d726fcd-9a6e-4e32-90bc-5d5d8f6f6573"],
+Cell[6711, 192, 191, 3, 35, "Text",ExpressionUUID->"dcf9e75b-bfc3-48f0-8c48-1d8ed940e892"],
+Cell[6905, 197, 225, 5, 30, "Input",ExpressionUUID->"317bf7ce-8cd5-4661-843e-a749480eb7d4"],
+Cell[7133, 204, 155, 3, 35, "Text",ExpressionUUID->"7ef44141-3d45-48b5-bb53-b879a7934146"],
+Cell[7291, 209, 1402, 33, 178, "Input",ExpressionUUID->"cdce299b-fe6d-4a46-93d9-72845f99af14"],
+Cell[CellGroupData[{
+Cell[8718, 246, 138, 3, 30, "Input",ExpressionUUID->"fd624a1d-d02b-4838-8ed0-2e04844f865f"],
+Cell[8859, 251, 306, 7, 24, "Print",ExpressionUUID->"78949c00-f3ee-454c-a00d-b3938a2a7325"]
+}, Open  ]],
+Cell[9180, 261, 118, 0, 35, "Text",ExpressionUUID->"ad6ec5a4-5b1a-41a1-a288-0cf04a9453e0"],
+Cell[9301, 263, 626, 15, 115, "Input",ExpressionUUID->"90e73974-9b66-4164-b1f2-19cd33ca7644"],
+Cell[CellGroupData[{
+Cell[9952, 282, 136, 3, 30, "Input",ExpressionUUID->"e04485b3-c961-4d5a-b801-e055c9b128f5"],
+Cell[10091, 287, 311, 7, 24, "Print",ExpressionUUID->"9abe4e57-8737-413d-9dd8-110ece05f5f6"]
+}, Open  ]],
+Cell[10417, 297, 607, 15, 115, "Input",ExpressionUUID->"6e26aac1-b76e-49f0-8c50-26a4474d334e"],
+Cell[11027, 314, 165, 3, 35, "Text",ExpressionUUID->"9b930ae0-b07d-4e7f-937b-a007e2a1e713"],
+Cell[CellGroupData[{
+Cell[11217, 321, 136, 3, 30, "Input",ExpressionUUID->"de0fa2df-71ae-4b8e-ad12-9f7047c816a0"],
+Cell[11356, 326, 335, 9, 40, "Print",ExpressionUUID->"d5f0798d-67bd-4761-9a57-508252ef289f"]
+}, Open  ]],
+Cell[11706, 338, 327, 7, 58, "Text",ExpressionUUID->"d39f9358-c1d7-41a9-b2a2-ced3682b41df"],
+Cell[CellGroupData[{
+Cell[12058, 349, 138, 3, 30, "Input",ExpressionUUID->"b704d371-b18f-4737-8910-b904545796c2"],
+Cell[12199, 354, 337, 8, 24, "Print",ExpressionUUID->"aaf1604b-266c-4c2b-b242-e18a4a71a0e4"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
