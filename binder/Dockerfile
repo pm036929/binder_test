@@ -6,7 +6,7 @@ USER root
 # && apt-get -y install --no-install-recommends gnupg git vim less \
 # && rm -rf /var/lib/apt/lists/*
 
-#COPY . ${HOME}/
+COPY . ${HOME}/
 RUN pip install numpy \
  && pip install jupyterlab \
  && pip install casadi\
